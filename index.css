@@ -1,8 +1,38 @@
 @import url("https://fast.fonts.net/lt/1.css?apiType=css&c=c69df2d9-bca3-42ae-b0a7-9d789edf3b68&fontids=721263");
 @font-face{
-  font-family:"AvenirNextLTW01-Regular";
-  src:url("assets/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
-  src:url("assets/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot"),url("assets/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2") format("woff2"),url("assets/1e9892c0-6927-4412-9874-1b82801ba47a.woff") format("woff"),url("assets/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf") format("truetype");
+  font-family:"Compagnon-Bold";
+  src:url("assets/Compagnon-Bold.eot?#iefix");
+  src:url("assets/Compagnon-Bold.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Bold.woff2") format("woff2"),
+      url("assets/Compagnon-Bold.woff") format("woff");
+}
+@font-face{
+  font-family:"Compagnon-Italic";
+  src:url("assets/Compagnon-Italic.eot?#iefix");
+  src:url("assets/Compagnon-Italic.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Italic.woff2") format("woff2"),
+      url("assets/Compagnon-Italic.woff") format("woff");
+}
+@font-face{
+  font-family:"Compagnon-Light";
+  src:url("assets/Compagnon-Light.eot?#iefix");
+  src:url("assets/Compagnon-Light.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Light.woff2") format("woff2"),
+      url("assets/Compagnon-Light.woff") format("woff");
+}
+@font-face{
+  font-family:"Compagnon-Medium";
+  src:url("assets/Compagnon-Medium.eot?#iefix");
+  src:url("assets/Compagnon-Medium.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Medium.woff2") format("woff2"),
+      url("assets/Compagnon-Medium.woff") format("woff");
+}
+@font-face{
+  font-family:"Compagnon-Roman";
+  src:url("assets/Compagnon-Roman.eot?#iefix");
+  src:url("assets/Compagnon-Roman.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Roman.woff2") format("woff2"),
+      url("assets/Compagnon-Roman.woff") format("woff");
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -36,8 +66,26 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  line-height: 1;
+  line-height: 1.5;
   /*color: #2a2a2a;*/
+}
+body.hidden {
+  display: none;
+}
+body.bold {
+  font-family: Compagnon-Bold;
+}
+body.italic {
+  font-family: Compagnon-Italic;
+}
+body.light {
+  font-family: Compagnon-Light;
+}
+body.medium {
+  font-family: Compagnon-Medium;
+}
+body.roman {
+  font-family: Compagnon-Roman;
 }
 ol, ul {
   list-style: none;
@@ -57,15 +105,12 @@ table {
 
 
 html {
-  font-size: .9rem;
+  font-size: 1rem;
   height: 100%;
 }
 
 body {
   background-color: white;
-  font-family: "AvenirNextLTW01-Regular", sans-serif;
-  font-weight: 400;
-  line-height: 1.1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +118,6 @@ body {
 }
 
 body li {
-  line-height: 1.5;
   margin: .5em 0;
 }
 
@@ -91,7 +135,7 @@ body li {
 
 }
 
-#main a {
+a {
   color: inherit;
   text-decoration: none;
   display: inline-block;
@@ -99,10 +143,10 @@ body li {
 }
 
 @media (hover: hover) {
-  #main a:hover::after {
+  a:hover::after {
     content: '';
     display: block;
-    height: 1px;
+    height: .05rem;
     background: #2a2a2a;
     width: 100%;
     position: absolute;
@@ -110,10 +154,14 @@ body li {
   }
 }
 
+#credit {
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+}
 
-p {
-  margin-bottom: 1.25em;
-  line-height: 1.4em;
+small {
+  font-size: .7em;
 }
 
 h1, h2, h3, h4, h5 {
