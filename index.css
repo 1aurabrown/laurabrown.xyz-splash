@@ -1,9 +1,38 @@
-@font-face {
-  font-family: "LeonardoFascia";
-  src: url("./assets/leonardofascia-regular.eot?") format("eot"),
-    url("./assets/leonardofascia-regular.woff") format("woff"),
-    url("./assets/leonardofascia-regular.otf") format("opentype"),
-    url("./assets/leonardofascia-regular.ttf") format("truetype");
+@import url("https://fast.fonts.net/lt/1.css?apiType=css&c=c69df2d9-bca3-42ae-b0a7-9d789edf3b68&fontids=721263");
+@font-face{
+  font-family:"Compagnon-Bold";
+  src:url("assets/Compagnon-Bold.eot?#iefix");
+  src:url("assets/Compagnon-Bold.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Bold.woff2") format("woff2"),
+      url("assets/Compagnon-Bold.woff") format("woff");
+}
+@font-face{
+  font-family:"Compagnon-Italic";
+  src:url("assets/Compagnon-Italic.eot?#iefix");
+  src:url("assets/Compagnon-Italic.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Italic.woff2") format("woff2"),
+      url("assets/Compagnon-Italic.woff") format("woff");
+}
+@font-face{
+  font-family:"Compagnon-Light";
+  src:url("assets/Compagnon-Light.eot?#iefix");
+  src:url("assets/Compagnon-Light.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Light.woff2") format("woff2"),
+      url("assets/Compagnon-Light.woff") format("woff");
+}
+@font-face{
+  font-family:"Compagnon-Medium";
+  src:url("assets/Compagnon-Medium.eot?#iefix");
+  src:url("assets/Compagnon-Medium.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Medium.woff2") format("woff2"),
+      url("assets/Compagnon-Medium.woff") format("woff");
+}
+@font-face{
+  font-family:"Compagnon-Roman";
+  src:url("assets/Compagnon-Roman.eot?#iefix");
+  src:url("assets/Compagnon-Roman.eot?#iefix") format("eot"),
+      url("assets/Compagnon-Roman.woff2") format("woff2"),
+      url("assets/Compagnon-Roman.woff") format("woff");
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -27,9 +56,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -37,8 +64,26 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  line-height: 1;
-  color: #2a2a2a;
+  line-height: 1.5;
+  /*color: #2a2a2a;*/
+}
+body.hidden {
+  display: none;
+}
+body.bold {
+  font-family: Compagnon-Bold;
+}
+body.italic {
+  font-family: Compagnon-Italic;
+}
+body.light {
+  font-family: Compagnon-Light;
+}
+body.medium {
+  font-family: Compagnon-Medium;
+}
+body.roman {
+  font-family: Compagnon-Roman;
 }
 ol, ul {
   list-style: none;
@@ -58,48 +103,102 @@ table {
 
 
 html {
-  font-size: 1rem;
+  font-size: 62.5%;
   height: 100%;
 }
 
 body {
   background-color: white;
-  font-family: "LeonardoFascia", serif;
-  font-weight: 400;
-  line-height: 1.1;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  letter-spacing: .03em;
 }
 
-body li {
-  line-height: 1.5;
-  margin: .5em 0;
+#projects li {
+  margin: .8rem 0;
+  position: relative;
+}
+
+body.with-roles #projects li::after {
+  position: absolute;
+  margin-left: .3em;
+  font-size: .7em;
+  top: -.2em;
+}
+
+body.with-roles #projects li[data-role=designer-developer]::after {
+  content: '□ ○';
+}
+body.with-roles #projects li[data-role=developer]::after {
+  content: '○';
+}
+
+body.medium.with-roles #projects li[data-role=designer-developer]::after {
+  content: '■ ●';
+}
+body.medium.with-roles #projects li[data-role=developer]::after {
+  content: '●';
+}
+
+body.bold.with-roles #projects li[data-role=designer-developer]::after {
+  content: '■ ●';
+}
+body.bold.with-roles #projects li[data-role=developer]::after {
+  content: '●';
+}
+
+body #key .credit-designer::after {
+  content: '□';
+}
+
+body.medium #key .credit-designer::after {
+  content: '■';
+}
+
+body.bold #key .credit-designer::after {
+  content: '■';
+}
+
+#key {
+  display: none;
+}
+body.with-roles #key {
+  display: block;
+  position: fixed;
+  right: 1.5em;
+  bottom: 1em;
+}
+
+#key .credit-developer::after {
+  content: '○';
+}
+
+body.medium #key .credit-developer::after {
+  content: '●';
+}
+
+body.bold #key .credit-developer::after {
+  content: '●';
 }
 
 #contact {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 #main {
   text-align: center;
-  padding: 2rem 2rem 5rem;
+  padding: 1em 1em 2em;
 }
+
+body {font-size: 1.6rem;}
 
 @media screen and (min-width: 1000px) {
-  html {font-size: 1.25rem;}
+  body {font-size: 2.0rem;}
 
 }
 
-@media screen and (max-width: 600px) {
-  html {font-size: .9rem;}
-
-}
-
-
-#main a {
+a {
   color: inherit;
   text-decoration: none;
   display: inline-block;
@@ -107,31 +206,41 @@ body li {
 }
 
 @media (hover: hover) {
-  #main a:hover::after {
+  a:hover::after {
     content: '';
     display: block;
-    height: 1px;
+    height: .1rem;
     background: #2a2a2a;
     width: 100%;
     position: absolute;
+    top: 1.5em;
   }
 }
 
+#credit {
+  position: fixed;
+  left: 1.5em;
+  bottom: 1em;
+}
 
-p {
-  margin-bottom: 1.25em;
-  line-height: 1.4em;
+small {
+  font-size: .7em;
+}
+sup {
+  font-size: .8em;
 }
 
 h1, h2, h3, h4, h5 {
-  margin: 3rem 0;
+  margin: 1.5em 0;
   font-weight: 400;
   line-height: 1.15;
 }
 
 h1 {
   margin-top: 0;
-  font-size: 3.052em;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
 }
 
 
@@ -141,5 +250,3 @@ h2, h3, h4, h5 {font-size: 1.25em;}
   display: inline-block;
   margin: 0 8px;
 }
-
-small, .text_small {font-size: 0.8em;}

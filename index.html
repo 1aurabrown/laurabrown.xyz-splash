@@ -39,7 +39,7 @@
 
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
   <meta name="og:title" content="Laura Brown">
-  <meta property="og:description" content="Laura Brown is a designer and developer focused on design-led digital projects.">
+  <meta property="og:description" content="Laura Brown is a designer and programmer focused on visually-driven digital projects.">
   <meta name="og:url" content="https://laurabrown.xyz">
   <meta name="og:site_name" content="Laura Brown">
   <meta name="og:type" content="website">
@@ -49,27 +49,44 @@
    type = "text/css"
    href = "./index.css" />
 
+
+<style type="text/css">
+    @font-face{
+        font-family:"AvenirNextLTW01-Regular";
+        src:url("/assets/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
+        src:url("/assets/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot"),url("/assets/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2") format("woff2"),url("/assets/1e9892c0-6927-4412-9874-1b82801ba47a.woff") format("woff"),url("/assets/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf") format("truetype");
+    }
+</style>
+
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+<script type="application/javascript" src="./assets/index.js"></script>
+
 </head>
 
 <body>
   <div id="main">
     <h1>Laura Brown</h1>
-    <h2>Designer, Web Developer</h2>
-    <ul>
-      <li>Forsyth [forthcoming]</li>
-      <li>PEOPLES [forthcoming]</li>
-      <li><a href="http://meredithjenks.com" target="_blank">Meredith Jenks</a></li>
-      <li><a href="https://hunting-season.com" target="_blank">Hunting Season</a></li>
-      <li><a href="https://thenueco.com" target="_blank">The Nue Co</a></li>
-      <li><a href="https://khaite.com" target="_blank">Khaite</a></li>
-      <li><a href="https://offhours.co" target="_blank">Offhours</a></li>
-      <li><a href="https://nicolesaldana.com" target="_blank">Nicole Saldaña</a></li>
-      <li><a href="https://paisley-baby.myshopify.com" target="_blank">Paisley</a></li>
-      <li><a href="https://tanyataylor.com" target="_blank">Tanya Taylor</a></li>
-      <li><a href="https://assembledbrands.com" target="_blank">Assembled Brands</a></li>
-      <li><a target="_blank" id="contact" href="mailto:hi@laurabrown.xyz">Contact</a></li>
+    <ul id="projects">
+      <li data-role="designer-developer">PEOPLES</li>
+      <li data-role="designer-developer"><a href="http://forsythart.com" target="_blank">Forsyth</a></li>
+      <li data-role="developer"><a href="http://meredithjenks.com" target="_blank">Meredith Jenks</a></li>
+      <li data-role="developer"><a href="https://hunting-season.com" target="_blank">Hunting Season</a></li>
+      <li data-role="developer"><a href="https://thenueco.com" target="_blank">The Nue Co</a></li>
+      <li data-role="developer"><a href="https://khaite.com" target="_blank">Khaite</a></li>
+      <li data-role="developer"><a href="https://offhours.co" target="_blank">Offhours</a></li>
+      <li data-role="developer"><a href="https://nicolesaldana.com" target="_blank">Nicole Saldaña</a></li>
+      <li data-role="developer"><a href="https://paisley-baby.myshopify.com" target="_blank">Paisley</a></li>
+      <li data-role="developer"><a href="https://tanyataylor.com" target="_blank">Tanya Taylor</a></li>
+      <li data-role="developer"><a href="https://assembledbrands.com" target="_blank">Assembled Brands</a></li>
     </ul>
+
+    <div id="contact"><a target="_blank" href="mailto:hi@laurabrown.xyz">Contact</a></div>
   </div>
+  <div id="key"><small>
+    <p><span class="credit-designer"></span> Design</p>
+    <p><span class="credit-developer"></span> Development</p>
+  </small></div>
+  <div id="credit"><small>Font: <a href="https://velvetyne.fr/fonts/compagnon/">Compagnon</a></small></div>
 </body>
 
 </html>
